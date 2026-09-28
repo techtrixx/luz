@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#6C4CF1">
+  <meta name="description" content="Luz na Palavra — uma central jovem de ferramentas bíblicas, oração, quiz, leitura e louvor.">
+  <title>Luz na Palavra | Apps Evangélicos</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%236C4CF1'/%3E%3Cpath d='M50 17c-18 0-31 8-31 19v42c0-11 13-19 31-19s31 8 31 19V36C81 25 68 17 50 17Z' fill='white'/%3E%3Cpath d='M50 25v28M38 39h24' stroke='%236C4CF1' stroke-width='7' stroke-linecap='round'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Manrope:wght@700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/qrcodejs@1.0.0/qrcode.min.js"></script>
+</head>
+<body>
+  <div class="top-glow"></div>
+
+  <header class="site-header">
+    <a class="brand" href="#inicio" aria-label="Luz na Palavra - início">
+      <span class="logo-mark">
+        <svg viewBox="0 0 100 100" aria-hidden="true">
+          <path d="M50 13C31 13 18 21 18 34v48c0-12 13-20 32-20s32 8 32 20V34C82 21 69 13 50 13Z"/>
+          <path class="logo-page" d="M50 21v38"/>
+          <path class="logo-cross" d="M50 29v25M39 41.5h22"/>
+        </svg>
+      </span>
+      <span>
+        <strong>Luz na Palavra</strong>
+        <small>fé • conhecimento • louvor</small>
+      </span>
+    </a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu">☰</button>
+    <nav id="mainNav">
+      <a href="#inicio">Início</a>
+      <a href="#apps">Apps</a>
+      <a href="#biblia">Bíblia</a>
+      <a href="#harpa">Harpa</a>
+      <a href="#karaoke">Karaokê</a>
+      <a href="#apoie">Apoie</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio">
+      <div class="hero-copy">
+        <span class="eyebrow">✦ UM CANTINHO DIGITAL DE FÉ</span>
+        <h1>Descubra, leia,<br><span>ore e louve.</span></h1>
+        <p>Uma central jovem de experiências bíblicas para estudar a Palavra, criar momentos de oração, brincar com conhecimento e encontrar louvores.</p>
+        <div class="hero-actions">
+          <a class="btn primary" href="#apps">Explorar os apps <span>→</span></a>
+          <a class="btn ghost" href="#biblia">Abrir a Bíblia</a>
+        </div>
+        <div class="hero-mini">
+          <span>📖 Bíblia</span><span>🎯 Quiz</span><span>🙏 Oração</span><span>🎵 Louvor</span>
+        </div>
+      </div>
+      <div class="hero-art" aria-label="Ilustração de uma Bíblia e luz">
+        <div class="sun"></div>
+        <div class="orbit orbit-a"></div><div class="orbit orbit-b"></div>
+        <div class="floating-card card-a">✨ Palavra viva</div>
+        <div class="floating-card card-b">🙏 Ore hoje</div>
+        <div class="bible-illustration">
+          <div class="bible-cover"></div>
+          <div class="bible-pages"></div>
+          <div class="cross-big">✝</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="daily-strip">
+      <div><span class="strip-icon">☀</span><div><b>Versículo para o momento</b><p id="dailyVerseRef">Carregando...</p></div></div>
+      <blockquote id="dailyVerseText">“Aguarde um instante enquanto buscamos uma palavra para você.”</blockquote>
+      <button class="icon-btn" id="newDailyVerse" title="Novo versículo">↻</button>
+    </section>
+
+    <section class="section" id="apps">
+      <div class="section-heading">
+        <span class="eyebrow">APLICATIVOS</span>
+        <h2>Ferramentas para sua jornada</h2>
+        <p>Escolha uma experiência e comece agora.</p>
+      </div>
+      <div class="app-grid">
+        <button class="app-card purple" data-open="names">
+          <span class="app-icon">👶</span><span class="tag">CRIATIVO</span>
+          <h3>Nome de Propósito</h3><p>Gere um nome inspirado em personagens e livros bíblicos a partir da data.</p><span class="open-link">Abrir app →</span>
+        </button>
+        <button class="app-card blue" data-open="quiz">
+          <span class="app-icon">🎯</span><span class="tag">DESAFIO</span>
+          <h3>Quiz Bíblico</h3><p>Teste seu conhecimento, ganhe pontos e descubra seu desempenho.</p><span class="open-link">Jogar agora →</span>
+        </button>
+        <button class="app-card gold" data-open="tribes">
+          <span class="app-icon">🛡️</span><span class="tag">LÚDICO</span>
+          <h3>As 12 Tribos</h3><p>Descubra uma tribo simbólica com base no seu nome e receba uma explicação.</p><span class="open-link">Descobrir →</span>
+        </button>
+        <button class="app-card green" data-open="word">
+          <span class="app-icon">💡</span><span class="tag">REFLEXÃO</span>
+          <h3>Palavra do Dia</h3><p>Uma palavra, uma referência bíblica e uma pequena aplicação para hoje.</p><span class="open-link">Receber palavra →</span>
+        </button>
+        <button class="app-card pink" data-open="prayer">
+          <span class="app-icon">🙏</span><span class="tag">ORAÇÃO</span>
+          <h3>Gerador de Oração</h3><p>Escolha uma categoria e gere uma oração para seu momento.</p><span class="open-link">Orar agora →</span>
+        </button>
+        <a class="app-card orange" href="#karaoke">
+          <span class="app-icon">🎤</span><span class="tag">YOUTUBE</span>
+          <h3>Karaokê Gospel</h3><p>Encontre louvores e hinos em formato karaokê diretamente no YouTube.</p><span class="open-link">Cantar →</span>
+        </a>
+      </div>
+    </section>
+
+    <section class="section feature-section" id="biblia">
+      <div class="section-heading">
+        <span class="eyebrow">LEITOR BÍBLICO</span>
+        <h2>Da criação ao Novo Testamento</h2>
+        <p>Ao abrir esta aba, a leitura começa em Gênesis 1. Navegue capítulo a capítulo.</p>
+      </div>
+      <div class="reader-shell">
+        <div class="reader-controls">
+          <label>Livro <select id="bibleBook"></select></label>
+          <label>Capítulo <select id="bibleChapter"></select></label>
+          <button class="btn primary small" id="loadBible">Ler capítulo</button>
+        </div>
+        <div class="reader-progress"><span id="readerProgress"></span></div>
+        <article class="bible-page">
+          <div class="page-kicker">SAGRADAS ESCRITURAS</div>
+          <h3 id="bibleTitle">Gênesis 1</h3>
+          <div id="bibleContent" class="bible-content"><p class="loading">Carregando Gênesis 1...</p></div>
+          <div class="reader-nav"><button class="btn ghost small" id="prevChapter">← Anterior</button><button class="btn primary small" id="nextChapter">Próximo →</button></div>
+          <p class="api-note">O texto é carregado no navegador por uma API bíblica externa. É necessária conexão com a internet.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="harpa">
+      <div class="section-heading">
+        <span class="eyebrow">LOUVOR</span>
+        <h2>Harpa Cristã</h2>
+        <p>Pesquise um hino por número ou nome e abra o resultado em uma nova aba.</p>
+      </div>
+      <div class="harpa-box">
+        <div class="harpa-cover"><span>🎼</span><b>HARPA<br>CRISTÃ</b><small>HINOS DE LOUVOR</small></div>
+        <div class="harpa-search">
+          <h3>Encontre seu hino</h3>
+          <p>Ex.: 1, Chuvas de Graça, 187...</p>
+          <div class="search-row"><input id="harpaSearch" placeholder="Número ou nome do hino"><button class="btn primary" id="searchHarpa">Pesquisar</button></div>
+          <div id="harpaResults" class="quick-hymns"></div>
+          <a class="external-link" href="https://www.harpacrista.com.br/" target="_blank" rel="noopener">Conhecer o site oficial da Harpa Cristã →</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="karaoke">
+      <div class="section-heading">
+        <span class="eyebrow">LOUVOR NO YOUTUBE</span>
+        <h2>Karaokê Gospel</h2>
+        <p>Escolha uma categoria. O site abre uma busca pronta no YouTube para você escolher o vídeo.</p>
+      </div>
+      <div class="karaoke-layout">
+        <div class="karaoke-player">
+          <div class="youtube-placeholder"><span>▶</span><h3>YouTube</h3><p>Selecione um louvor ao lado para pesquisar.</p></div>
+          <div class="search-result-bar"><span id="youtubeQuery">Nenhuma busca selecionada</span><button id="openYoutube" class="btn primary small">Abrir no YouTube</button></div>
+        </div>
+        <div class="karaoke-list" id="karaokeList"></div>
+      </div>
+      <p class="api-note">O YouTube não permite mais que um iframe carregue resultados de pesquisa diretamente; por isso o botão abre a busca oficial do YouTube, evitando uma integração quebrada. </p>
+    </section>
+
+    <section class="section support-section" id="apoie">
+      <div class="support-card">
+        <div class="support-copy"><span class="eyebrow">APOIE O PROJETO</span><h2>Ajude a manter a Luz na Palavra acesa 💜</h2><p>Se este projeto abençoar você, sua contribuição pode ajudar com hospedagem, manutenção e novas ferramentas.</p><div class="pix-key"><span>Chave Pix</span><strong id="pixKeyText">22998086364</strong><button id="copyPix">Copiar</button></div><small>Chave configurada como telefone no padrão Pix. Se o tipo da sua chave for outro, altere a configuração em <code>script.js</code>.</small></div>
+        <div class="qr-wrap"><div id="pixQr"></div><b>Escaneie para apoiar</b><span>PIX</span></div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-brand"><span class="footer-logo">✝</span><div><b>Luz na Palavra</b><small>fé • conhecimento • louvor</small></div></div>
+    <p>Feito para servir, estudar e celebrar a Palavra. ♡</p>
+    <span>© <span id="year"></span> Luz na Palavra</span>
+  </footer>
+
+  <div class="modal-backdrop" id="modalBackdrop">
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <button class="modal-close" id="modalClose" aria-label="Fechar">×</button>
+      <div id="modalContent"></div>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
